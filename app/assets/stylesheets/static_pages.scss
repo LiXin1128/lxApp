@@ -1,3 +1,79 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	background-color: #ffffff;
+}
+
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.row {
+	text-align: center;
+}
+
+// home 
+.home{
+	background-image: image-url("bike_small.png");
+}
+
+.background-home{
+	padding: 15px; 
+	background-color: rgba(360, 360, 360, 0.4);
+	display: inline-block;
+}
+
+// about
+.about{
+	background-color: #DA8E79;
+	height: 100vh;
+}
+
+// contact
+.contact{
+	background-color: #2F977A;
+	height: 100vh;
+}
+
+.contact ul{
+	list-style-type: none;
+}
+
+.contact-content{
+	left: 30%;
+}
+
+// landing page
+.carousel {
+	margin: auto;
+}
+
+.carousel-caption h1 {
+	padding-bottom: 18%;
+	font-family: "Playfair Display",serif;
+	text-shadow: none;
+	font-size: 8em;
+	color: #fff;
+}
+
+.carousel-caption span {
+	display: block;
+	font-size: .3em;
+}
+.header-landing-page {
+	padding: 15px; 
+	background-color: rgba(0, 0, 0, 0.4);
+	display: inline-block;
+}
+
+//copyright
+.copyright{
+	font-size:0.3em;
+	text-align: center;
+}

@@ -19,19 +19,23 @@
 
   <body>
   
-  <div class="projectName navbar-brand">
-    <%= link_to('Bike', static_pages_index_path) %>
-  </div> <!--end projectName -->
-  <div class="navbar-collapse collapse">
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to('Home', static_pages_index_path) %></li>
-        <li><%= link_to('Products', products_path) %></li>
-        <li><%= link_to('About', static_pages_about_path) %></li>
-        <li><%= link_to('Contact', static_pages_contact_path) %></li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="nav_container">
+        <div class="projectName navbar-brand">
+          <%= link_to('Bike', static_pages_landing_page_path) %>
+        </div> <!--end projectName -->
+        <div class="navbar-collapse collapse">
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to('Home', static_pages_landing_page_path) %></li>
+              <li><%= link_to('Products', products_path) %></li>
+              <li><%= link_to('About', static_pages_about_path) %></li>
+              <li><%= link_to('Contact', static_pages_contact_path) %></li>
+            </ul>
+          </nav>
+        </div>
+    </div><!-- container end-->
+  </nav>
 
     <%= yield %>
 
