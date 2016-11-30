@@ -4,11 +4,42 @@
     <title>LxApp</title>
     <%= csrf_meta_tags %>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= action_cable_meta_tag %>
+    
   </head>
 
   <body>
+  
+  <div class="projectName navbar-brand">
+    <%= link_to('Bike', static_pages_index_path) %>
+  </div> <!--end projectName -->
+  <div class="navbar-collapse collapse">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to('Home', static_pages_index_path) %></li>
+        <li><%= link_to('Products', products_path) %></li>
+        <li><%= link_to('About', static_pages_about_path) %></li>
+        <li><%= link_to('Contact', static_pages_contact_path) %></li>
+      </ul>
+    </nav>
+  </div>
+
     <%= yield %>
+
+  <footer>
+      <div class="copyright col-md-12">
+          <span class="copyright">Copyright &copy; Bike Xin Li, 2016</span>
+      </div>
+  </footer><!--Footer End-->
+
   </body>
 </html>
