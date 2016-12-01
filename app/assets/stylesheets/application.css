@@ -14,8 +14,8 @@
  *= require_self
  */
 .nav_container{
-	padding-right: 15px;
-    padding-left: 15px;
+	padding-right: 30px;
+    padding-left: 30px;
     margin-right: auto;
     margin-left: auto;
 }

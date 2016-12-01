@@ -5,11 +5,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-	background-color: #ffffff;
-}
-
-
 .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
@@ -51,7 +46,8 @@
 
 // landing page
 .carousel {
-	margin: auto;
+	margin-left: -35px;
+  	margin-right: -35px;
 }
 
 .carousel-caption h1 {
@@ -75,5 +71,21 @@
 //copyright
 .copyright{
 	font-size:0.3em;
+	color: #555;
 	text-align: center;
+}
+
+.newProduct{
+	text-align: center;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.newProductButton{
+	border:1px black solid;
+}
+
+//footer
+footer{
+	padding: 20px;
 }
