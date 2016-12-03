@@ -11,32 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<div class="col-sm-12 col-md-12 col-lg-12 edit_product">
+    <div class="field">
+      <%= f.label :name, class: "control-label" %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :color %>
-  </div>
+    <div class="field">
+      <%= f.label :color, class: "control-label" %><br>
+      <%= f.text_field :color, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <div class="field">
+      <%= f.label :description, class: "control-label" %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
+    <div class="field">
+      <%= f.label :image_url, class: "control-label" %>
+      <%= f.text_field :image_url, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>    
-  </div>
+    <div class="field">
+      <%= f.label :price, class: "control-label" %>
+      <%= f.text_field :price, class: 'form-control' %>    
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

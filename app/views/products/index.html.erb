@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-12 col-xs-12">
+<div class="col-sm-12 col-md-12 col-lg-12">
   <h2>Our Products</h2>
 </div>
 
@@ -16,9 +16,7 @@
 
 <br>
 
-<div class="newProduct">
-	<button name="button" type="button" class="newProductButton">
-		<%= link_to 'New Product', new_product_path %>
-	</button>
+<div class="new_product">
+	<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
 </div>
 
