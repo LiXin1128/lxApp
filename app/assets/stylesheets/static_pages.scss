@@ -24,27 +24,7 @@
 	display: inline-block;
 }
 
-// about
-.about{
-	background-color: #DA8E79;
-	height: 100vh;
-}
-
-// contact
-.contact{
-	background-color: #2F977A;
-	height: 100vh;
-}
-
-.contact ul{
-	list-style-type: none;
-}
-
-.contact-content{
-	left: 30%;
-}
-
-// landing page
+// landing_page
 .carousel {
 	margin-left: -35px;
   	margin-right: -35px;
@@ -88,4 +68,10 @@
 //footer
 footer{
 	padding: 20px;
+}
+
+//contact page
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
