@@ -18,7 +18,6 @@
   </head>
 
   <body>
-  
   <nav class="navbar navbar-default navbar-fixed-top">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -36,22 +35,41 @@
             <nav>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="nav_search">
-                      <%= form_tag("/products", method: "get") do %>
-                      <!--<%= label_tag(:q, "Search for:") %>-->
-                      <%= text_field_tag(:q) %>
-                      <%= submit_tag("Go", class: 'button-s') %>
+                      <%= form_tag("/products", method: "get", class: "navbar-form navbar-left") do %>
+                      <%= text_field_tag(:q, nil, class: 'form-control', placeholder: 'Search') %>
+                      <%= submit_tag("Go", class: 'btn btn-default') %>
                       <% end %>
                   </li>
                   <li><%= link_to 'Home', '/static_pages/landing_page' %></li>
                   <li><%= link_to 'Products', products_path %></li>
                   <li><%= link_to 'About', '/static_pages/about' %></li>
                   <li><%= link_to 'Contact', '/static_pages/contact' %></li>
+                  <li>
+                    <% if user_signed_in? %>
+                      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                    <% else %>
+                      <%= link_to('Login', new_user_session_path) %>
+                    <% end %>
+                  </li>
                 </ul>
             </nav>
         </div>
     </div><!-- nav_container end-->
-  </nav>
-  
+  </nav><!-- navbar end-->
+
+  <!-- Add Alerts -->
+      <% if notice %>
+      <div class="alert alert-info" role="alert">
+        <p id="notice" class="alert alert-info"><%= notice %></p>
+      </div>
+      <% end %>
+      <% if alert %>
+      <div class="alert alert-danger" role="alert">
+        <p id="alert" class="alert alert-info"><%= alert %></p>
+      </div>
+      <% end %>
+  <!-- Alerts End -->
+
     <%= yield %>
 
   <footer>
@@ -59,8 +77,8 @@
           <span class="copyright">Copyright &copy; Bike Xin Li, 2016</span>
       </div>
   </footer><!--Footer End-->
-
   </body>
+
   <!-- Bootstrap core JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
