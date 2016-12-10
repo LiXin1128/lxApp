@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-sm-12 col-md-12 col-lg-12">
-  <h2>Our Products</h2>
-</div>
+<div class="container-fulid">
+	<div class="row">
+  		<h3>ROAD BIKES & FRAMES</h3>
+  	</div>
+</div> <!-- container-fulid end -->
 
 <br>
 
-<div class="container-fluid ourProduct">
+<div class="container-fulid">
   <div class="row">
     <% @products.each do |product| %>
       <%= render partial: "product", locals: {product: product} %>
     <% end %>
   </div>
-</div>
+</div> <!-- container-fulid end -->
 
 <br>
 
 <div class="new_product">
-	<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
+	<%= link_to 'New Product', new_product_path, class: "btn btn-md btn-success" %>
 </div>
 
