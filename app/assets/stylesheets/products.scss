@@ -7,12 +7,18 @@ h1, h2, h3, h4, h5, p {
 }
 
 .new_product, .edit_product{
-	padding-top:30px;
-	text-align:center;
+	padding-top:10px;
 }
 .item_bike{
 	padding:6% 6%;
 }
 .product_show{
 	margin-top:5%;
+}
+.back_btn{
+	text-align:center;
+	padding-top:5px;
+}
+.form-new{
+	width:50%;
 }

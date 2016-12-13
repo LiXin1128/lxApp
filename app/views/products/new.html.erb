@@ -1,7 +1,9 @@
-<div class="col-sm-12 col-md-12 new_product">
-	<h1>New Product</h1>
+<div class="new_product">
+	<p><strong>New Product</strong></p>
 
 	<%= render 'form', product: @product %>
+</div>
 
-	<%= link_to 'Back', products_path, class: "btn btn-default" %>
+<div class="back_btn">
+	<%= link_to 'Back', products_path, class: "btn btn-default btn-md" %>
 </div>
