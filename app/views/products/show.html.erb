@@ -1,54 +1,50 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container-fluid product_show">
-    <div class="row product_list">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <p>
-              <strong>Name:</strong>
-              <%= @product.name %>
-            </p>
-            <p>
-              <%= image_tag(@product.image_url, class: "img-responsive")if @product.image_url %>
-            </p>
-        </div> <!--col end-->
+    <div class="row" data-product-id="<%= @product.id %>">
+      <% cache @product do %>
+      <div class="col-md-6 col-xs-12">
+        <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url_large") %>
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <h5>Description:</h5>
+        <% if signed_in? && current_user.admin? %>
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <% end %>
+        <%= link_to 'Back', products_path %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+            <h3><%= @product.name %></h3>
+            <h5>Price: $<%= @product.price %></h5>
+            <h5>Color: <%= @product.color %></h5>
+            <h5>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></h5>
             <p><%= @product.description %></p>
-            <h5>Color:
-              <%= @product.color %>
-            </h5>
-            <h5>Price:
-              <%= @product.price %>
-            </h5>
-            <h5>
-              <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-            </h5>
-              <%= render partial: "new_comment" %>
-            <p>
-              <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default" %> |
-              <%= link_to 'Back', products_path, class: "btn btn-default" %>
-            </p>
-        </div> <!--col end-->
-    </div> <!--row product_list end-->
-</div> <!--container-fluid end-->
-
-
-<div class="container-fluid">
+      </div><!-- col -->
+      <% end %>
+    </div>
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <h4>User Ratings</h4>
+      <div class="col-md-6 col-xs-12">
+          <h5>User Ratings</h5>
           <% if !@product.comments.empty? %>
-            <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
-                  <h5>Good Product:</h5>
-                  <p>"<%= @product.highest_rating_comment.body%>"</p>
+          <div class="col-md-6 col-xs-6">
+            <div class="container-rating">
+              <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+                <h5>Good Product:</h5>
+                <p>"<%= @product.highest_rating_comment.body%>"</p>
+            </div>
+          </div><!-- col -->
+          <div class="col-md-6 col-xs-6">
+            <div class="container-rating">
+              <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+                <h5>Bad Product:</h5>
+                <p>"<%= @product.lowest_rating_comment.body%>"</p>
               </div>
-            
-            <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
-                  <h5>Bad Product:</h5>
-                  <p>"<%= @product.lowest_rating_comment.body%>"</p>
-              </div>
-          <% end %>
-        </div> <!--col-sm-md-lg-12 end-->
-    </div> <!--row end-->
-</div> <!--container-fluid end-->
+          </div><!-- col -->
+         <% end %>
+          <div class="col-md-12 col-xs-12">
+          <%= render partial: "new_comment" %>
+          </div><!-- col -->
+      </div><!-- col -->
+    </div><!-- row -->
+
+    <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+    <%= will_paginate @comments %>
+    <%= render partial: "comments" %>
+
+</div><!-- /container -->

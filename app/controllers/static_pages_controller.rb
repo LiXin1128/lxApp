@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+	require 'net/http'
+	require 'json'
 
   	def index
   	end
